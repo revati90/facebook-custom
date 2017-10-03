@@ -1,0 +1,27 @@
+name = Facebook
+description = Install with commonly used features pre-configured.
+core = 7.x
+
+;hidden = TRUE
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = features
+dependencies[] = facebook_user
