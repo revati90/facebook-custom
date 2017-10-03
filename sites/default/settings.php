@@ -245,11 +245,11 @@
  * @endcode
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
-      'database' => 'facebook_drupal_1',
+      'database' => 'facebook_drupal',
       'username' => 'root',
       'password' => 'password',
       'host' => 'localhost',
