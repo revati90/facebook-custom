@@ -410,27 +410,27 @@ function facebook_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  //Create a users
-  $result = db_query("SELECT rid FROM {role} where name like :id",array(':id' => 'administrator'));
-  $admin_rid = $result->fetchField(0);
-  $roles = user_roles();
-  unset($roles[1]);
-  unset($roles[2]);
-  unset($roles[$admin_rid]);
-  foreach($roles as $key => $value) {
-    $mail = 'test-' . strtolower($value) . '@osseed.com';
-    $new_user = array(
-      'name' => $value,
-      'mail' => $mail,
-      'pass' => strtolower($value),
-      'status' => 1,
-      'init' => $mail,
-      'roles' =>array(
-        $key => $value,
-      ),
-    );
-    user_save('',$new_user);
-  }
+  // //Create a users
+  // $result = db_query("SELECT rid FROM {role} where name like :id",array(':id' => 'administrator'));
+  // $admin_rid = $result->fetchField(0);
+  // $roles = user_roles();
+  // unset($roles[1]);
+  // unset($roles[2]);
+  // unset($roles[$admin_rid]);
+  // foreach($roles as $key => $value) {
+  //   $mail = 'test-' . strtolower($value) . '@osseed.com';
+  //   $new_user = array(
+  //     'name' => $value,
+  //     'mail' => $mail,
+  //     'pass' => strtolower($value),
+  //     'status' => 1,
+  //     'init' => $mail,
+  //     'roles' =>array(
+  //       $key => $value,
+  //     ),
+  //   );
+  //   user_save('',$new_user);
+  // }
 
   // Create a Home link in the main menu.
   $item = array(
