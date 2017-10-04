@@ -23,5 +23,4 @@ dependencies[] = toolbar
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
-dependencies[] = features
 dependencies[] = facebook_user

@@ -245,9 +245,9 @@
  * @endcode
  */
 $databases = array (
-  'default' =>
+  'default' => 
   array (
-    'default' =>
+    'default' => 
     array (
       'database' => 'facebook_drupal',
       'username' => 'root',
@@ -290,7 +290,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'HP6HztjOUuysEcpc0LqL8YHJPbhYHRJTrOvrf2_ir0s';
+$drupal_hash_salt = 'ezoAgIAbzJLYQWLdIzaS0j6gBJWNdRS33_hfzJStjjk';
 
 /**
  * Base URL (optional).

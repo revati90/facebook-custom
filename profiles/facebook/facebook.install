@@ -69,7 +69,7 @@ function facebook_install() {
   filter_format_save($full_html_format);
 
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'bartik');
+  $default_theme = variable_get('theme_default', 'facebook');
   $admin_theme = 'seven';
   $blocks = array(
     array(
@@ -411,55 +411,26 @@ function facebook_install() {
     ->execute();
 
   //Create a users
-  $users =array(
-    'revati' => 'gawas.revati@gmail.com',
-    'madhavi' => 'revati90@rediffmail.com',
-  );
-  foreach ($users as $user => $email) {
+  $result = db_query("SELECT rid FROM {role} where name like :id",array(':id' => 'administrator'));
+  $admin_rid = $result->fetchField(0);
+  $roles = user_roles();
+  unset($roles[1]);
+  unset($roles[2]);
+  unset($roles[$admin_rid]);
+  foreach($roles as $key => $value) {
+    $mail = 'test-' . strtolower($value) . '@osseed.com';
     $new_user = array(
-      'name' => $user,
-      'pass' => $user,
-      'mail' => $email,
+      'name' => $value,
+      'mail' => $mail,
+      'pass' => strtolower($value),
       'status' => 1,
-      'init' => $email,
-      'roles' => array(
-        DRUPAL_AUTHENTICATED_RID => 'authenticated user',
-        3 => 'editor',
-        4 =>'manager',
+      'init' => $mail,
+      'roles' =>array(
+        $key => $value,
       ),
     );
-    user_save('', $new_user);
+    user_save('',$new_user);
   }
-
-  // // Create a default role for site manager
-  //  $new_user_manager = array(
-  //    'name' => 'Manager',
-  //    'pass' => 'manager', // note: do not md5 the password
-  //    'mail' => 'gawas.revati@gmail.com',
-  //    'status' => 1,
-  //    'init' => 'gawas.revati@gmail.com',
-  //    'roles' => array(
-  //      DRUPAL_AUTHENTICATED_RID => 'authenticated user',
-  //      4 => 'manager',
-  //    ),
-  //  );
-  //  // The first parameter is sent blank so a new user is created.
-  //  user_save('', $new_user_manager);
-  //
-  //  // Create a default role for site editor
-  //   $new_user_editor = array(
-  //     'name' => 'Editor',
-  //     'pass' => 'editor', // note: do not md5 the password
-  //     'mail' => 'gawas.revati@gmail.com',
-  //     'status' => 1,
-  //     'init' => 'gawas.revati@gmail.com',
-  //     'roles' => array(
-  //       DRUPAL_AUTHENTICATED_RID => 'authenticated user',
-  //       5 => 'editor',
-  //     ),
-  //   );
-  //   // The first parameter is sent blank so a new user is created.
-  //   user_save('', $new_user_editor);
 
   // Create a Home link in the main menu.
   $item = array(
@@ -471,6 +442,23 @@ function facebook_install() {
 
   // Update the menu router information.
   menu_rebuild();
+
+  // enable default theme
+  $enable = array(
+   'theme_default' => 'facebook',
+   'admin_theme' => 'seven',
+   //'zen'
+ );
+ theme_enable($enable);
+
+ foreach ($enable as $var => $theme) {
+   if (!is_numeric($var)) {
+     variable_set($var, $theme);
+   }
+ }
+
+ // Disable the default Bartik theme
+ theme_disable(array('bartik'));
 
   // Enable the admin theme.
   db_update('system')
