@@ -1,0 +1,41 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+.navbar.container {
+  background-color: #3b5998;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+#user-login-form {
+  float: right;
+}
+.form-control {
+  border-radius: 0px;
+  height: 25px;
+}
+.form-group {
+  margin: 5px;
+}
+.form-type-textfield {
+  float: left;
+  color: #ffffff;
+}
+.form-type-password {
+  float: right;
+  color: #ffffff;
+}
+.main-container {
+  background: linear-gradient(rgb(255,255,255), rgb(194,199,214));
+  // padding: 0;
+  // margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.glyphicon {
+  display: none;
+}
