@@ -3,3 +3,75 @@
  * @file
  * Drupal needs this blank file.
  */
+/**
+ * Implements hook_form_user_login_block_alter().
+ */
+function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  //  dsm($form);
+  $form['name']['#size'] = 15;
+  $form['name']['#title'] = t('Email');
+  $form['pass']['#size'] = 15;
+  $markup = l(t('Forgotten account?'), 'user/password');
+  $markup = '<div class="clearfix-login">' . $markup . '</div>';
+  $form['links']['#markup'] = $markup;
+  $form['links']['#weight'] = 100;
+}
+
+/**
+* Implements hook_form_form_id_alter().
+*/
+function facebook_form_alter(&$form, &$form_state, $form_id){
+ if ($form_id == 'user_register_form') {
+   dsm($form);
+   $form['customtext_1'] = array(
+     '#type' => 'item',
+     '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',
+     '#weight' => -1, // Adjust so that you can place it whereever
+     );
+
+     $form['password'] = array(
+       '#type' => 'password',
+       '#title' => t('Password'),
+       '#description' => t('Please enter your password'),
+       '#attributes' => array('placeholder' => t('New password')),
+       '#size' => 60,
+       '#maxlength' => 30,
+       '#required' => TRUE,
+       '#weight' => 2,
+      );
+
+      $form['customtext_2'] =array(
+        '#type' =>'item',
+        '#markup' => '<div><label><a href="#">Why do I need to provide my date of birth?</a></label></div>',
+        '#weight' => 4,
+      );
+
+      $form['customtext_3'] =array(
+        '#type' =>'item',
+        '#markup' => '<div class="content">
+              By clicking Create an account, you agree to our <a href="#">Terms</a> and<span class="span-display">confirm that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie</a></span><a href="#">Use Policy</a>.You may receive SMS message notifications from<span class="span-display"> Facebook and can optout at any time.',
+        '#weight' => 10,
+      );
+
+      $form['customtext_4'] =array(
+        '#type' =>'item',
+        '#markup' => '<div><p class="content-bold"><a href="#">Create a Page</a> for a celebrity, band or business.</p></div>',
+        '#weight' => 100,
+      );
+      //  $form['field_first_name']['#title_display'] = 'invisible';
+      $form['field_first_name']['#prefix'] = '<div class="first">';
+      $form['field_first_name']['#suffix'] = '</div>';
+      $form['field_surname']['#prefix'] = '<div class="last">';
+      $form['field_surname']['#suffix'] = '</div><div class ="clearfix"></div>';
+
+      // $form['field_account_birthday']['#attributes']['class'][1]['#prefix'] = '<div class ="day">';
+      // $form['field_account_birthday']['#attributes']['class'][1]['#sufix'] = '</div>';
+      $form['field_account_birthday[und][0][value][day]']['#prefix'] = '<div class ="day">';
+      $form['field_account_birthday[und][0][value][day]']['#sufix'] = '</div>';
+
+      $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+
+    }
+
+}

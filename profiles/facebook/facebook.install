@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install, update and uninstall functions for the standard installation profile.
+ * Install, update and uninstall functions for the facebook installation profile.
  */
 
 /**
@@ -112,16 +112,16 @@ function facebook_install() {
       'pages' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'system',
-      'delta' => 'navigation',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_first',
-      'pages' => '',
-      'cache' => -1,
-    ),
+    // array(
+    //   'module' => 'system',
+    //   'delta' => 'navigation',
+    //   'theme' => $default_theme,
+    //   'status' => 1,
+    //   'weight' => 0,
+    //   'region' => 'sidebar_first',
+    //   'pages' => '',
+    //   'cache' => -1,
+    // ),
     // array(
     //   'module' => 'system',
     //   'delta' => 'powered-by',
@@ -410,16 +410,16 @@ function facebook_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  // Create a Home link in the main menu.
-  $item = array(
-    'link_title' => st('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main-menu',
-  );
-  menu_link_save($item);
-
-  // Update the menu router information.
-  menu_rebuild();
+  // // Create a Home link in the main menu.
+  // $item = array(
+  //   'link_title' => st('Home'),
+  //   'link_path' => '<front>',
+  //   'menu_name' => 'main-menu',
+  // );
+  // menu_link_save($item);
+  //
+  // // Update the menu router information.
+  // menu_rebuild();
 
   // enable default theme
   $enable = array(
