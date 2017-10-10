@@ -22,7 +22,7 @@ function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_i
 */
 function facebook_form_alter(&$form, &$form_state, $form_id){
  if ($form_id == 'user_register_form') {
-   dsm($form);
+  //  dsm($form);
    $form['customtext_1'] = array(
      '#type' => 'item',
      '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',
@@ -56,7 +56,7 @@ function facebook_form_alter(&$form, &$form_state, $form_id){
       $form['customtext_4'] =array(
         '#type' =>'item',
         '#markup' => '<div><p class="content-bold"><a href="#">Create a Page</a> for a celebrity, band or business.</p></div>',
-        '#weight' => 100,
+        '#weight' => 110,
       );
       //  $form['field_first_name']['#title_display'] = 'invisible';
       $form['field_first_name']['#prefix'] = '<div class="first">';
@@ -66,10 +66,10 @@ function facebook_form_alter(&$form, &$form_state, $form_id){
 
       // $form['field_account_birthday']['#attributes']['class'][1]['#prefix'] = '<div class ="day">';
       // $form['field_account_birthday']['#attributes']['class'][1]['#sufix'] = '</div>';
-      $form['field_account_birthday[und][0][value][day]']['#prefix'] = '<div class ="day">';
-      $form['field_account_birthday[und][0][value][day]']['#sufix'] = '</div>';
+      // $form['field_account_birthday[und][0][value][day]']['#prefix'] = '<div class ="day">';
+      // $form['field_account_birthday[und][0][value][day]']['#sufix'] = '</div>';
 
-      $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
       $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
 
     }
