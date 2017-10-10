@@ -64,14 +64,7 @@ function facebook_form_alter(&$form, &$form_state, $form_id){
       $form['field_surname']['#prefix'] = '<div class="last">';
       $form['field_surname']['#suffix'] = '</div><div class ="clearfix"></div>';
 
-      // $form['field_account_birthday']['#attributes']['class'][1]['#prefix'] = '<div class ="day">';
-      // $form['field_account_birthday']['#attributes']['class'][1]['#sufix'] = '</div>';
-      // $form['field_account_birthday[und][0][value][day]']['#prefix'] = '<div class ="day">';
-      // $form['field_account_birthday[und][0][value][day]']['#sufix'] = '</div>';
-
-      $form['field_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
       $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
-
     }
-
 }

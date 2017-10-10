@@ -67,113 +67,122 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
-.navbar.container {
-  background-color: #3b5998;
-  margin-top: 0px;
-  width: 100%;
-  max-width: 100%;
-}
-
-/* line 14, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 html {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 .glyphicon {
   display: none;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 span.form-required {
   display: none;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 span.span-display {
   display: block;
 }
 
-/* line 31, ../sass/screen.scss */
-.not-logged-in header .navbar.container {
+/* line 29, ../sass/screen.scss */
+.not-logged-in header.navbar {
   background-color: #3b5998;
   margin-top: 0px;
   width: 100%;
   max-width: 100%;
 }
-/* line 38, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form {
-  width: 490px;
-  float: right;
+/* line 34, ../sass/screen.scss */
+.not-logged-in header.navbar .container {
+  width: 80%;
+  margin: 0 auto;
 }
-/* line 41, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form .form-type-textfield,
-.not-logged-in header .region-navigation #user-login-form .form-type-password {
+/* line 38, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form {
+  margin-top: 10px;
+  margin-right: 45px;
+  float: right;
+  font-size: 13px;
+}
+/* line 43, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-type-textfield,
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-type-password {
   display: inline-block;
   color: #ffffff;
 }
-/* line 46, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form #edit-actions--2 {
+/* line 48, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-actions {
   float: right;
   margin-top: 17px;
   margin-right: 92px;
 }
-/* line 51, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form .clearfix-login {
-  float: right;
-  margin-right: 33px;
+/* line 52, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-actions .btn {
+  padding: 4px 11px;
+  margin-top: 10px;
 }
-/* line 54, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form .clearfix-login a {
+/* line 57, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .clearfix-login {
+  margin-left: 91px;
+  padding-left: 68px;
+}
+/* line 60, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .clearfix-login a {
   color: #9cb4d8;
 }
-/* line 58, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form .form-group {
+/* line 64, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-group {
   margin: 5px;
 }
-/* line 61, ../sass/screen.scss */
-.not-logged-in header .region-navigation #user-login-form .form-control {
+/* line 67, ../sass/screen.scss */
+.not-logged-in header.navbar .container .region-navigation #user-login-form .form-control {
   border-radius: 0px;
   height: 25px;
 }
-/* line 68, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 .not-logged-in .main-container {
   background: linear-gradient(white, #c2c7d6);
   width: 100%;
   max-width: 100%;
 }
-/* line 74, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
+.not-logged-in .main-container .panels-flexible-1-inside {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 86, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-first .pane-content {
   line-height: 1.2em;
   font-weight: bold;
   font-size: 19px;
 }
-/* line 78, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-first .pane-content .span-class {
   display: block;
 }
-/* line 84, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last .pane-title {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-/* line 91, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form .first {
   width: 49%;
   float: left;
 }
-/* line 95, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form .last {
   width: 49%;
   float: right;
 }
-/* line 99, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form .clearfix {
   margin-bottom: 15px;
 }
-/* line 102, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form .form-control {
   width: auto;
   padding: 10px 12px;
@@ -185,12 +194,12 @@ span.span-display {
   font-size: 20px;
   margin-right: 0px;
 }
-/* line 113, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday {
   width: 50%;
   display: inline-block;
 }
-/* line 117, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-heading,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-body,
@@ -199,14 +208,14 @@ span.span-display {
   border-style: hidden;
   padding: 0px;
 }
-/* line 124, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel .panel-title,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-heading .panel-title,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-body .panel-title,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .date-padding .panel-title {
   font-size: 20px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel .panel-body .form-type-select select,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-heading .panel-body .form-type-select select,
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-field-account-birthday #field-account-birthday-add-more-wrapper .panel-body .panel-body .form-type-select select,
@@ -214,33 +223,33 @@ span.span-display {
   font-size: 14px;
   padding: 5px;
 }
-/* line 138, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-customtext-2 {
   width: 50%;
   float: right;
   margin-top: 27px;
   font-size: 16px;
 }
-/* line 144, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form .form-type-radio {
   display: inline-block;
   padding-left: 10px;
   font-size: 20px;
 }
-/* line 150, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-customtext-3 .content {
   font-size: 14px;
   color: #737373;
   line-height: 1.3em;
 }
-/* line 157, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-customtext-4 .content-bold {
   font-weight: bold;
   padding: 10px 0px;
   margin: 15px 0px;
   color: #737373;
 }
-/* line 164, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 .not-logged-in .main-container .panel-flexible .panels-flexible-column-last #user-register-form #edit-submit {
   border: 1px solid #3b6e22;
   color: #ffffff;
@@ -255,37 +264,46 @@ span.span-display {
   cursor: pointer;
   border-radius: 5px;
 }
-/* line 182, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .not-logged-in .footer {
   margin-top: 0px;
   border-top: hidden;
 }
-/* line 185, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
+.not-logged-in .footer.container {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 201, ../sass/screen.scss */
 .not-logged-in .footer #block-gtranslate-gtranslate {
   border-bottom: 1px solid #dddfe2;
 }
-/* line 188, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .not-logged-in .footer .nav {
   display: inline-flex;
-  font-size: 14px;
+  font-size: 13px;
 }
-/* line 191, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .not-logged-in .footer .nav li {
-  width: 107px;
+  width: 87px;
 }
-/* line 194, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 .not-logged-in .footer .nav li > a {
   padding: 5px 15px;
   padding-left: 0px;
 }
-/* line 198, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 .not-logged-in .footer .nav li > a:hover {
   text-decoration: underline;
   background-color: transparent;
 }
-/* line 204, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .not-logged-in .footer #block-block-3 p {
   font-size: 13px;
   padding-top: 15px;
   color: #737373;
+}
+/* line 226, ../sass/screen.scss */
+.not-logged-in .footer #block-system-powered-by {
+  margin: 12px 0;
 }

@@ -2049,7 +2049,7 @@ function system_block_info() {
     'region' => 'content',
   );
   $blocks['powered-by'] = array(
-    'info' => t('Powered by Drupal'),
+    'info' => t('Facebook copyright'),
     'weight' => '10',
     'cache' => DRUPAL_NO_CACHE,
   );
@@ -3442,7 +3442,7 @@ function system_timezone($abbreviation = '', $offset = -1, $is_daylight_saving_t
  * @ingroup themeable
  */
 function theme_system_powered_by() {
-  return '<span>' . t('Powered by <a href="@poweredby">Drupal</a>', array('@poweredby' => 'https://www.drupal.org')) . '</span>';
+  return '<span>' . t('Facebook ©2017') . '</span>';
 }
 
 /**
