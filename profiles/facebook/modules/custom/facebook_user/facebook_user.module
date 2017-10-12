@@ -8,9 +8,9 @@
  */
 function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_id) {
   //  dsm($form);
-  $form['name']['#size'] = 15;
+  $form['name']['#size'] = 20;
   $form['name']['#title'] = t('Email');
-  $form['pass']['#size'] = 15;
+  $form['pass']['#size'] = 20;
   $markup = l(t('Forgotten account?'), 'user/password');
   $markup = '<div class="clearfix-login">' . $markup . '</div>';
   $form['links']['#markup'] = $markup;
@@ -18,53 +18,49 @@ function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_i
 }
 
 /**
-* Implements hook_form_form_id_alter().
+* Implements hook_form_formID_alter().
 */
-function facebook_form_alter(&$form, &$form_state, $form_id){
- if ($form_id == 'user_register_form') {
+function facebook_user_form_user_register_form_alter(&$form, &$form_state, $form_id){
   //  dsm($form);
-   $form['customtext_1'] = array(
-     '#type' => 'item',
-     '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',
-     '#weight' => -1, // Adjust so that you can place it whereever
-     );
+  $form['customtext_1'] = array(
+    '#type' => 'item',
+    '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',
+    '#weight' => -1, // Adjust so that you can place it whereever
+  );
+  $form['password'] = array(
+    '#type' => 'password',
+    '#title' => t('Password'),
+    '#description' => t('Please enter your password'),
+    '#attributes' => array('placeholder' => t('New password')),
+    '#size' => 60,
+    '#maxlength' => 30,
+    '#required' => TRUE,
+    '#weight' => 2,
+  );
 
-     $form['password'] = array(
-       '#type' => 'password',
-       '#title' => t('Password'),
-       '#description' => t('Please enter your password'),
-       '#attributes' => array('placeholder' => t('New password')),
-       '#size' => 60,
-       '#maxlength' => 30,
-       '#required' => TRUE,
-       '#weight' => 2,
-      );
+  $form['customtext_2'] =array(
+    '#type' =>'item',
+    '#markup' => '<div><label><a href="#">Why do I need to provide my date of birth?</a></label></div>',
+    '#weight' => 3,
+  );
 
-      $form['customtext_2'] =array(
-        '#type' =>'item',
-        '#markup' => '<div><label><a href="#">Why do I need to provide my date of birth?</a></label></div>',
-        '#weight' => 4,
-      );
+  $form['customtext_3'] =array(
+    '#type' =>'item',
+    '#markup' => '<div class="content">By clicking Create an account, you agree to our <a href="#">Terms</a> and<span class="span-display">confirm that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie</a></span><a href="#">Use Policy</a>.You may receive SMS message notifications from<span class="span-display"> Facebook and can optout at any time.',
+    '#weight' => 10,
+  );
 
-      $form['customtext_3'] =array(
-        '#type' =>'item',
-        '#markup' => '<div class="content">
-              By clicking Create an account, you agree to our <a href="#">Terms</a> and<span class="span-display">confirm that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie</a></span><a href="#">Use Policy</a>.You may receive SMS message notifications from<span class="span-display"> Facebook and can optout at any time.',
-        '#weight' => 10,
-      );
+  $form['customtext_4'] =array(
+    '#type' =>'item',
+    '#markup' => '<div><p class="content-bold"><a href="#">Create a Page</a> for a celebrity, band or business.</p></div>',
+    '#weight' => 110,
+  );
+  //  $form['field_first_name']['#title_display'] = 'invisible';
+  $form['field_first_name']['#prefix'] = '<div class="first">';
+  $form['field_first_name']['#suffix'] = '</div>';
+  $form['field_surname']['#prefix'] = '<div class="last">';
+  $form['field_surname']['#suffix'] = '</div><div class ="clearfix"></div>';
 
-      $form['customtext_4'] =array(
-        '#type' =>'item',
-        '#markup' => '<div><p class="content-bold"><a href="#">Create a Page</a> for a celebrity, band or business.</p></div>',
-        '#weight' => 110,
-      );
-      //  $form['field_first_name']['#title_display'] = 'invisible';
-      $form['field_first_name']['#prefix'] = '<div class="first">';
-      $form['field_first_name']['#suffix'] = '</div>';
-      $form['field_surname']['#prefix'] = '<div class="last">';
-      $form['field_surname']['#suffix'] = '</div><div class ="clearfix"></div>';
-
-      $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
-      $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
-    }
+  $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+  $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
 }
