@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the facebook_sign_up_page feature.
+ */
+
+include_once 'facebook_sign_up_page.features.inc';

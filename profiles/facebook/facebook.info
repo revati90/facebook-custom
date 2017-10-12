@@ -24,3 +24,4 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 dependencies[] = facebook_user
+;dependencies[] = facebook_sign_up_page
