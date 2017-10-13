@@ -1,0 +1,5 @@
+name = Facebook Updates
+description = Push incremental updates to site post launch.
+core = 7.x
+package = Facebook
+version = 7.x-1.0
