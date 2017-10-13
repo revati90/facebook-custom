@@ -21,32 +21,25 @@ function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_i
 * Implements hook_form_formID_alter().
 */
 function facebook_user_form_user_register_form_alter(&$form, &$form_state, $form_id){
-  //  dsm($form);
+  //dsm($form);
   $form['customtext_1'] = array(
     '#type' => 'item',
     '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',
     '#weight' => -1, // Adjust so that you can place it whereever
   );
-  $form['password'] = array(
-    '#type' => 'password',
-    '#title' => t('Password'),
-    '#description' => t('Please enter your password'),
-    '#attributes' => array('placeholder' => t('New password')),
-    '#size' => 60,
-    '#maxlength' => 30,
-    '#required' => TRUE,
-    '#weight' => 2,
-  );
+
+  $form['account']['pass']['#type'] = 'password';
+  $form['account']['pass']['#title'] = 'Password';
 
   $form['customtext_2'] =array(
     '#type' =>'item',
-    '#markup' => '<div><label><a href="#">Why do I need to provide my date of birth?</a></label></div>',
+    '#markup' => '<div><label><a href="#">Why do I need to provide <span class ="span-display">my date of birth?</span></a></label></div>',
     '#weight' => 3,
   );
 
   $form['customtext_3'] =array(
     '#type' =>'item',
-    '#markup' => '<div class="content">By clicking Create an account, you agree to our <a href="#">Terms</a> and<span class="span-display">confirm that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie</a></span><a href="#">Use Policy</a>.You may receive SMS message notifications from<span class="span-display"> Facebook and can optout at any time.',
+    '#markup' => '<div class="content">By clicking Create an account, you agree to our <a href="#">Terms</a> and confirm <span class="span-display">that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie</a> <a href="#">Use </a></span><a href="#">Policy</a>.You may receive SMS message notifications from<span class="span-display"> Facebook and can optout at any time.</span></div>',
     '#weight' => 10,
   );
 
@@ -63,4 +56,6 @@ function facebook_user_form_user_register_form_alter(&$form, &$form_state, $form
 
   $form['field_account_gender'][LANGUAGE_NONE]['#title_display'] = 'invisible';
   $form['field_account_birthday'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+
+  $form['actions']['submit']['#value'] = t('Create an account');
 }
