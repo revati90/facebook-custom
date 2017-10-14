@@ -56,7 +56,7 @@ function facebook_sign_up_page_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => '',
+          'vocabulary' => 'gender',
           'parent' => 0,
         ),
       ),

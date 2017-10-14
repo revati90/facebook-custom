@@ -10,6 +10,12 @@
 function facebook_sign_up_page_menu_default_menu_custom() {
   $menus = array();
 
+  // Exported menu: management.
+  $menus['management'] = array(
+    'menu_name' => 'management',
+    'title' => 'Management',
+    'description' => 'The <em>Management</em> menu contains links for administrative tasks.',
+  );
   // Exported menu: menu-footer-menu.
   $menus['menu-footer-menu'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -33,6 +39,8 @@ function facebook_sign_up_page_menu_default_menu_custom() {
   t('Footer menu');
   t('Footer menu 1');
   t('Footer menu 2');
+  t('Management');
+  t('The <em>Management</em> menu contains links for administrative tasks.');
 
   return $menus;
 }

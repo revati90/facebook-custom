@@ -22,6 +22,7 @@ function facebook_user_form_user_login_block_alter(&$form, &$form_state, $form_i
 */
 function facebook_user_form_user_register_form_alter(&$form, &$form_state, $form_id){
   //dsm($form);
+  // $form['account']['#title'] = t('Create an account');
   $form['customtext_1'] = array(
     '#type' => 'item',
     '#markup' => '<div ><label>It&apos;s free and always will be.</label></div>',

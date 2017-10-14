@@ -36,9 +36,9 @@ function facebook_sign_up_page_field_default_field_instances() {
     'label' => 'Birthday',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'strtotime',
       'default_value2' => 'same',
-      'default_value_code' => '',
+      'default_value_code' => '-1 day ,-18 years',
       'default_value_code2' => '',
       'user_register_form' => 1,
     ),
@@ -52,7 +52,7 @@ function facebook_sign_up_page_field_default_field_instances() {
         'label_position' => 'within',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-10:+0',
+        'year_range' => '-0:1905',
       ),
       'type' => 'date_select',
       'weight' => 4,
@@ -77,11 +77,12 @@ function facebook_sign_up_page_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_account_gender',
     'label' => 'Gender',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
-      'user_register_form' => FALSE,
+      'user_register_form' => 1,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
@@ -106,7 +107,7 @@ function facebook_sign_up_page_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_first_name',
-    'label' => 'First Name',
+    'label' => 'First name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -160,7 +161,7 @@ function facebook_sign_up_page_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Birthday');
-  t('First Name');
+  t('First name');
   t('Gender');
   t('Surname');
 
