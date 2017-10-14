@@ -179,8 +179,8 @@ header#navbar {
   max-width: 100%;
 }
 /* line 104, ../sass/screen.scss */
-.not-logged-in .main-container .panels-flexible-1-inside,
-.page-signuplink .main-container .panels-flexible-1-inside {
+.not-logged-in .main-container .panel-flexible-inside,
+.page-signuplink .main-container .panel-flexible-inside {
   width: 980px;
   margin: 0 auto;
 }
